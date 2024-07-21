@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload and Detail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="container">
+    <!-- Header section with upload button, page title, and start button -->
+    <div id="header">
+        <!-- Dosya yükleme butonu -->
+        <label for="fileInput" id="uploadLabel">Upload Images</label>
+        <!-- Gizli dosya giriş alanı -->
+        <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
+        <h1 id="pageTitle">Title</h1>
+        <button id="startButton">Start</button>
+    </div>
+    <!-- Container for tab list and scroll buttons -->
+    <div id="tablistContainer" style="display: none;">
+        <button id="scrollLeftButton">&lt;</button>
+        <div id="tablistWrapper">
+            <div id="tablist"></div>
+        </div>
+        <button id="scrollRightButton">&gt;</button>
+    </div>
+    <!-- Container for tab details including image and detail fields -->
+    <div id="tabDetailWrapper" style="display: none;">
+        <div id="tabDetail">
+            <div id="imageContainer">
+                <img id="tabImage" src="" alt="Selected Image">
+            </div>
+            <div id="detailContainer">
+                <button id="addButton">Add Element</button>
+                <div id="detailFields"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Include JavaScript files for functionality -->
+<script type="module" src="scripts/upload.js"></script>
+<script type="module" src="scripts/tabs.js"></script>
+<script type="module" src="scripts/details.js"></script>
+</body>
+</html>

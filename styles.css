@@ -1,0 +1,239 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Tam sayfa boyutunda */
+    box-sizing: border-box;
+}
+
+/* Header styling */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 20px 20px 10px 20px; /* Yukarıdan, soldan ve sağdan boşluk, aşağıdan 10px */
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Button styling */
+#uploadLabel, #startButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+#startButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Page title styling */
+#pageTitle {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Tab list container styling */
+#tablistContainer {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin: 0 20px; /* Sadece soldan ve sağdan boşluk */
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Scroll button styling */
+#scrollLeftButton, #scrollRightButton {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+/* Tab list wrapper styling */
+#tablistWrapper {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+/* Tab list styling */
+#tablist {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#tablist::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+/* Tab styling */
+.tab {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.tab:hover {
+    background-color: #0056b3;
+}
+
+.tab input {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    width: auto;
+    min-width: 50px;
+    cursor: pointer;
+}
+
+.tab input:focus {
+    outline: none;
+    cursor: text;
+}
+
+/* Tab detail wrapper styling */
+#tabDetailWrapper {
+    display: flex;
+    flex-grow: 1; /* Boş alanı kaplamasını sağlar */
+    height: calc(100vh - 300px); /* Sayfanın yüksekliğinden diğer elementlerin yüksekliğini çıkarır */
+    padding: 20px;
+    margin: 0 20px 20px 20px; /* Yanlardan ve aşağıdan boşluk, yukarıdan margin yok */
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    gap: 20px; /* İki konteyner arasında boşluk */
+}
+
+/* Tab detail styling */
+#tabDetail {
+    display: flex;
+    width: 100%;
+    height: 100%; /* Sabit yükseklik */
+}
+
+/* Image container styling */
+#imageContainer {
+    flex: 1;
+    max-width: 25%; /* 4'te 1 alan */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px; /* Yanlardan boşluk */
+}
+
+#imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Resmi konteynere sığdır ve en-boy oranını koru */
+}
+
+/* Detail container styling */
+#detailContainer {
+    flex: 3;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px; /* İçerideki elemanlar için boşluk */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#addButton {
+    margin: 10px auto; /* Ortada hizalama */
+    align-self: center;
+    padding: 20px;
+    width: 100%;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#detailFields {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.field-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.field-group label {
+    flex: 1 0 calc(100% / 50); /* Number Label. Detail Fields'in 50'de 1'i */
+}
+
+.field-group input[name="name"] {
+    flex: 12 0 calc(100% * 12 / 50); /* Name Textbox. Detail Fields'in 50'de 12'si */
+}
+
+.field-group select {
+    flex: 6 0 calc(100% * 6 / 50); /* Selector Dropdown. Detail Fields'in 50'de 6'sı */
+}
+
+.field-group input[name="value"] {
+    flex: 20 0 calc(100% * 20 / 50); /* Value Textbox. Detail Fields'in 50'de 20'si */
+}
+
+.field-group .remove-btn {
+    flex: 1 0 calc(100% / 50); /* Remove Button. Detail Fields'in 50'de 1'i */
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
